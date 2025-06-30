@@ -16,6 +16,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <nav>
             <Link href="/" className="mx-2">Home</Link>
             <Link href="/about" className="mx-2">About</Link>
+            <Link href="/blog/id" className="mx-2">Blog</Link>
+            <Link href="/products/productId" className="mx-2">Products</Link>
+            <Link href="/profile" className="mx-2">Profile</Link>
           </nav>
         </header>
 
