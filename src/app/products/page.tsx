@@ -1,11 +1,21 @@
-export default function Products(){
-  return (
-<>
-  <h1>Products </h1>
+// app/products/page.tsx
 
-  <h1>Product 1</h1>
-  <h1>Product 2</h1>
-  <h1>Product 3</h1>
-  </>
-  )
+async function getProducts() {
+  const res = await fetch("https://fakestoreapi.com/products");
+  return res.json();
+}
+
+export default async function ProductsPage() {
+  const products = await getProducts();
+
+  return (
+    <div>
+      <h1>Products</h1>
+      <ul>
+        {products.map((product: any) => (
+          <li key={product.id}>{product.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
 }
